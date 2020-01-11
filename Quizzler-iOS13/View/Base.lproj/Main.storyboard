@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,14 +24,20 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fal-oS-tEg">
                                 <rect key="frame" x="20" y="44" width="374" height="818"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4P-Jb-DC3">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSI-li-mhO">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="618"/>
+                                        <rect key="frame" x="0.0" y="42.5" width="374" height="485.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVw-Hl-IRe">
-                                        <rect key="frame" x="0.0" y="628" width="374" height="80"/>
+                                        <rect key="frame" x="0.0" y="538" width="374" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="ueD-qr-2mT"/>
                                         </constraints>
@@ -44,7 +50,21 @@
                                             <action selector="ansAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qk8-eH-pjA"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbn-vQ-GyC">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TV0-xT-xeo">
+                                        <rect key="frame" x="0.0" y="628" width="374" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="au2-Gg-Z4q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="True" backgroundImage="Rectangle">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ansAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TC7-2F-NSU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbn-vQ-GyC">
                                         <rect key="frame" x="0.0" y="718" width="374" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="fNm-VT-9Ox"/>
@@ -84,10 +104,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="falseButton" destination="tbn-vQ-GyC" id="8dx-hA-GLd"/>
+                        <outlet property="option1Btn" destination="oVw-Hl-IRe" id="RNA-od-nZs"/>
+                        <outlet property="option2Btn" destination="TV0-xT-xeo" id="y1W-B4-oqQ"/>
+                        <outlet property="option3Btn" destination="tbn-vQ-GyC" id="Bni-kH-1tK"/>
                         <outlet property="progressBar" destination="TXm-qh-7Xg" id="sUK-kQ-nbM"/>
                         <outlet property="questionLbl" destination="rSI-li-mhO" id="mWK-cD-Qp4"/>
-                        <outlet property="trueButton" destination="oVw-Hl-IRe" id="naj-C1-Bpc"/>
+                        <outlet property="scoreLbl" destination="T4P-Jb-DC3" id="GhF-p7-08N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

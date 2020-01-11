@@ -8,10 +8,12 @@
 
 struct Question{
     var text : String
-    var answer : String
+    var multipleAnswer : [String]
+    var correctAnswer : String
     
-    init(q:String,a:String) {
+    init(q:String,a:[String],correctAnswer:String) {
         self.text = q
-        self.answer = a
+        self.multipleAnswer = a
+        self.correctAnswer = correctAnswer
     }
 }
